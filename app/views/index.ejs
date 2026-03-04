@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <div class="container">
+    <form method="get" action="/" style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+      <label for="status" style="font-weight: 500;">Filter:</label>
+        <select name="status" id="status" onchange="this.form.submit()" style="padding: 0.4em 1em; border-radius: 4px; border: 1px solid #eaeaea;">
+          <option value=""  >All</option>
+          <option value="Pending" <%= selectedStatus === 'Pending' ? 'selected' : '' %>>Pending</option>
+          <option value="Applied" <%= selectedStatus === 'Applied' ? 'selected' : '' %>>Applied</option>
+          <option value="To Be Interviewed" <%= selectedStatus === 'To Be Interviewed' ? 'selected' : '' %>>To Be Interviewed</option>
+          <option value="Interviewed" <%= selectedStatus === 'Interviewed' ? 'selected' : '' %>>Interviewed</option>
+          <option value="Offer" <%= selectedStatus === 'Offer' ? 'selected' : '' %>>Offer</option>
+          <option value="Rejected" <%= selectedStatus === 'Rejected' ? 'selected' : '' %>>Rejected</option>
+          <option value="Ghosted (Cricket)" <%= selectedStatus === 'Ghosted (Cricket)' ? 'selected' : '' %>>Ghosted (Cricket)</option>
+        </select>
+    </form>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <h2>Job Applications</h2>
+      <a href="/add" class="btn">Add Job</a>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Date Applied</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (jobs.length === 0) { %>
+          <tr><td colspan="5" style="text-align:center; color:#888;">No jobs yet.</td></tr>
+        <% } %>
+        <% jobs.forEach(job => { %>
+          <tr>
+            <td><%= job.company %></td>
+            <td><%= job.role %></td>
+            <% function statusToClass(status) {
+              return status
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
+            } %>
+            <td>
+              <span class="badge <%= statusToClass(job.status) %>"<% if (job.status === 'Ghosted (Cricket)') { %> title="No response from employer"<% } %>>
+                <%= job.status %>
+              </span>
+            </td>
+            <td><%= job.dateApplied %></td>
+            <td class="actions">
+              <a href="/edit/<%= job.id %>" class="btn">Edit</a>
+              <form action="/delete/<%= job.id %>" method="POST" style="display:inline;">
+                <button type="submit" class="btn" style="background:#ef4444;">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  
+</body> 
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Job - Job Application Tracker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <div class="container">
+    <h2>Add Job Application</h2>
+    <form action="/add" method="POST">
+      <div class="form-group">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" required>
+      </div>
+      <div class="form-group">
+        <label for="role">Role</label>
+        <input type="text" id="role" name="role" required>
+      </div>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" name="status" required>
+          <option value="Pending">Pending</option>
+          <option value="Applied">Applied</option>
+          <option value="To Be Interviewed">To Be Interviewed</option>
+          <option value="Interviewed">Interviewed</option>
+          <option value="Offer">Offer</option>
+          <option value="Rejected">Rejected</option>
+          <option value="Ghosted (Cricket)">Ghosted (Cricket)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dateApplied">Date Applied</label>
+        <input type="date" id="dateApplied" name="dateApplied" required>
+      </div>
+      <button type="submit" class="btn">Add Job</button>
+      <a href="/" class="btn" style="background:#888;">Cancel</a>
+    </form>
+  </div>
+</body>
+</html>

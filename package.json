@@ -1,0 +1,13 @@
+{
+  "name": "job-application-tracker",
+  "version": "1.0.0",
+  "description": "Track job applications with Express and EJS",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9"
+  }
+}
