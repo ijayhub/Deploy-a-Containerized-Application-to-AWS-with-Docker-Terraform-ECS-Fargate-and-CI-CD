@@ -12,9 +12,7 @@ This project shows how to:
 * Push container images to Amazon ECR
 * Provision cloud infrastructure with Terraform
 * Deploy containers using ECS Fargate
-* Automate deployments using GitHub Actions
-
-The goal is to show a real end to end DevOps deployment process.
+* Automate deployments using GitHub Action.
 
 ## Architecture
 
