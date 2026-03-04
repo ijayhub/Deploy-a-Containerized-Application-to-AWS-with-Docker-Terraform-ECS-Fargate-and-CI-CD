@@ -2,3 +2,7 @@
 terraform.tfstate
 terraform.tfstate.backup
 terraform.tfvars
+node_modules/
+.DS_Store
+*.log
+*.env
