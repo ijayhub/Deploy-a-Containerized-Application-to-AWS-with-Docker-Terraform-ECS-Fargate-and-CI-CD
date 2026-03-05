@@ -24,7 +24,7 @@ Developer (Build the code)
    │ 
    ▼
 Build Docker Image
-   │ provision with terraform
+   │ provision with Terraform
    ▼
 Amazon ECR
    │
@@ -33,6 +33,9 @@ Amazon ECS Fargate
    │ push code
    ▼
 GitHub Repository
+   │
+   ▼
+Automate with GitHub Action
    
 ```
 
