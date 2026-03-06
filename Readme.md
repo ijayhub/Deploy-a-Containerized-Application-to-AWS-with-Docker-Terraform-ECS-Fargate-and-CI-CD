@@ -1,7 +1,7 @@
 # Deploy a Containerized Application to AWS
 ---
 
-<img src="./app/public/jobtracker.gif" alt="job tracker application"/>
+<img src="./app/public/job.gif" alt="job tracker application"/>
 
 This project demonstrates how to containerize an application and deploy it to AWS using a simple DevOps workflow.
 
