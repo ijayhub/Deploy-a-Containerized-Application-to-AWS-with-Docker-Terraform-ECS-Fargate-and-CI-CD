@@ -1,4 +1,5 @@
 # Deploy a Containerized Application to AWS
+<img src="./app/public/jobtracker.gif" alt="job tracker application"/>
 
 This project demonstrates how to containerize an application and deploy it to AWS using a simple DevOps workflow.
 
@@ -116,6 +117,16 @@ Whenever code is pushed to the **main branch**:
 3. ECS Fargate updates the running service
 
 This ensures that new code is deployed automatically.
+
+## Live Application
+
+You can view the running application here:
+
+https://job-tracker-application-u5kj.onrender.com
+
+The app is hosted on Render for easy access and testing.
+
+
 
 ## Author
 
